@@ -115,7 +115,7 @@ public class Utility {
      */
     private static void saveWeatherInfo(Context context, String cityName, String weatherCode, String temp1,
             String temp2, String weatherDesp, String publishTime) {
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy年M月d日", Locale.CHINA);
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy年MM月dd日", Locale.CHINA);
         SharedPreferences.Editor editor=PreferenceManager.getDefaultSharedPreferences(context).edit();
         editor.putBoolean("city_selected", true);
         editor.putString("city_name", cityName);
@@ -124,7 +124,7 @@ public class Utility {
         editor.putString("temp2", temp2);
         editor.putString("weather_desp", weatherDesp);
         editor.putString("publish_time", publishTime);
-        editor.putString("currrent_date", sdf.format(new Date()));
+        editor.putString("current_date", sdf.format(new Date()));
         editor.commit();     
     }
 
